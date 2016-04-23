@@ -283,7 +283,7 @@ you should place you code here."
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
