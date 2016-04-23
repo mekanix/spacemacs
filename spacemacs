@@ -252,7 +252,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  )
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -274,13 +274,17 @@ you should place you code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  (evil-leader/set-key
+    "gBd" 'magit-branch-delete
+  )
+
+  (setq vc-follow-symlinks t)
 
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))))
 
-  (setq vc-follow-symlinks t)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
