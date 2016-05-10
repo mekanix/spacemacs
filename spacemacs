@@ -35,6 +35,7 @@ values."
      html
      javascript
      markdown
+     mu4e
      org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -284,6 +285,24 @@ you should place you code here."
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+  (setq message-send-mail-function 'smtpmail-send-it
+        mu4e-drafts-folder "/Drafts"
+        mu4e-get-mail-command "offlineimap"
+        mu4e-maildir "~/Mail/tilda"
+        mu4e-sent-folder "/Sent"
+        mu4e-sent-messages-behavior 'delete
+        mu4e-show-images t
+        mu4e-split-view 'horizontal
+        mu4e-view-show-images t
+        smtpmail-default-smtp-server "mail.tilda.center"
+        smtpmail-local-domain        "tilda.center"
+        smtpmail-smtp-server         "mail.tilda.center"
+        smtpmail-smtp-service 25
+        smtpmail-stream-type 'starttls
+        user-full-name "Goran Mekić"
+        user-mail-address "meka@tilda.center"
+  )
 )
 
 
@@ -295,7 +314,9 @@ you should place you code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-chromium))
- '(magit-commit-arguments (quote ("--all" "--verbose"))))
+ '(magit-commit-arguments (quote ("--all" "--verbose")))
+ '(smtpmail-smtp-server "mail.tilda.center")
+ '(smtpmail-smtp-service 25))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
