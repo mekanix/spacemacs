@@ -46,6 +46,7 @@ values."
      react
      restclient
      ruby
+     shell
      vagrant
      version-control
      )
@@ -266,14 +267,16 @@ you should place you code here."
   (setq magit-repository-directories '("~/repos/"))
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
   (setq-default
-   ;; js2-mode
-   js2-basic-offset 2
-   ;; web-mode
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
+    ;; js2-mode
+    js2-basic-offset 2
+    js2-strict-trailing-comma-warning nil
+    ;; web-mode
+    css-indent-offset 2
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-attr-indent-offset 2
+  )
 
   (evil-leader/set-key
     "gBd" 'magit-branch-delete
@@ -284,25 +287,31 @@ you should place you code here."
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+  )
 
   (setq message-send-mail-function 'smtpmail-send-it
-        mu4e-drafts-folder "/Drafts"
-        mu4e-get-mail-command "offlineimap"
-        mu4e-maildir "~/Mail/tilda"
-        mu4e-sent-folder "/Sent"
-        mu4e-sent-messages-behavior 'delete
-        mu4e-show-images t
-        mu4e-split-view 'horizontal
-        mu4e-view-show-images t
-        smtpmail-default-smtp-server "mail.tilda.center"
-        smtpmail-local-domain        "tilda.center"
-        smtpmail-smtp-server         "mail.tilda.center"
-        smtpmail-smtp-service 25
-        smtpmail-stream-type 'starttls
-        user-full-name "Goran Mekić"
-        user-mail-address "meka@tilda.center"
+    mu4e-drafts-folder "/Drafts"
+    mu4e-get-mail-command "offlineimap"
+    mu4e-maildir "~/Mail/tilda"
+    mu4e-sent-folder "/Sent"
+    mu4e-sent-messages-behavior 'delete
+    mu4e-show-images t
+    mu4e-split-view 'horizontal
+    mu4e-view-show-images t
+    smtpmail-default-smtp-server "mail.tilda.center"
+    smtpmail-local-domain        "tilda.center"
+    smtpmail-smtp-server         "mail.tilda.center"
+    smtpmail-smtp-service 25
+    smtpmail-stream-type 'starttls
+    user-full-name "Goran Mekić"
+    user-mail-address "meka@tilda.center"
   )
+
+  (defun react/post-init-flycheck ()
+    (setq-default flycheck-disabled-checkers
+                  (append flycheck-disabled-checkers
+                          '(javascript-jshint))))
 )
 
 
