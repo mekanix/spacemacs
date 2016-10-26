@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     shell-scripts
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -28,7 +29,7 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      ;; better-defaults
-     dockerfile
+     c-c++
      emacs-lisp
      git
      github
@@ -323,9 +324,13 @@ you should place you code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-chromium))
+ '(evil-want-Y-yank-to-eol t)
  '(magit-commit-arguments (quote ("--all" "--verbose")))
- '(smtpmail-smtp-server "mail.tilda.center")
- '(smtpmail-smtp-service 25))
+ '(package-selected-packages
+   (quote
+    (disaster company-c-headers cmake-mode clang-format minitest insert-shebang hide-comnt fish-mode company-shell powerline pcre2el org alert log4e gntp markdown-mode json-snatcher json-reformat multiple-cursors hydra parent-mode request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter gh marshal logito pcache ht pkg-info epl flx iedit anzu evil goto-chg undo-tree highlight diminish web-completion-data dash-functional tern pos-tip company inf-ruby bind-map bind-key packed pythonic f dash s avy auto-complete popup package-build async pug-mode anaconda-mode smartparens yasnippet magit-popup git-commit with-editor flycheck helm helm-core projectile magit js2-mode yapfify uuidgen rake py-isort org-projectile org-download ob-http mu4e-maildirs-extension mu4e-alert livid-mode skewer-mode simple-httpd live-py-mode link-hint jinja2-mode github-search flyspell-correct-helm flyspell-correct eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump column-enforce-mode yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe vagrant-tramp vagrant use-package toc-org tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restclient restart-emacs rbenv rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dockerfile-mode diff-hl define-word cython-mode company-web company-tern company-statistics company-quickhelp company-anaconda coffee-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile ansible-doc ansible aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(smtpmail-smtp-server "mail.tilda.center" t)
+ '(smtpmail-smtp-service 25 t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
