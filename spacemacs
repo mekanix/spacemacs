@@ -257,6 +257,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default dotspacemacs-folding-method 'origami)
 )
 
 (defun dotspacemacs/user-config ()
@@ -326,7 +327,6 @@ you should place you code here."
                                 (dtrt-indent-adapt)))
   (setq-default c-default-style "bsd")
   (setq-default require-final-newline t)
-  (setq-default dotspacemacs-folding-method 'origami)
 )
 
 
