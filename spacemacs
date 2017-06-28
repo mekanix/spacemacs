@@ -30,6 +30,9 @@ values."
      ansible
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-return-key-behavior nil
+                      auto-completion-tab-key-behavior 'complete
                       auto-completion-enable-sort-by-usage t)
      ;; better-defaults
      (c-c++ :variables
